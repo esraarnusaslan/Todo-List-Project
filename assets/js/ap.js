@@ -79,7 +79,7 @@ function removeTodoToStorage(removeTodo) {
 
 function addTodo(e) {
     const inputText = addInput.value.trim();
-    if (InputEvent == null || inputText == '') {
+    if (inputText == null || inputText == '') {
         showAlert('warning', 'Please enter a text');
     } else {
         addTodoToUI(inputText);
@@ -137,12 +137,12 @@ function showAlert(type, message) {
 
     const div = document.createElement('div');
     //div.className = 'alert alert-' + type;
-    div.className = `alert alert-${type} mt-4`;
+    div.className = `alert alert-${type} mt-4 role="alert" `;
     div.textContent = message;
 
     firstCardBody.appendChild(div);
 
     setTimeout(() => {
         div.remove();
-    }, 2500);
+    }, 1000);
 }
